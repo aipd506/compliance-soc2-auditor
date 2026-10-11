@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "compliance-soc2-auditor"
+version = "0.1.0"
+description = "Automated infrastructure policy posture evaluator, SOC 2 Trust Services Criteria (CC6/CC7/CC8) and CIS Benchmark audit checks, gap assessment matrix, and cryptographically signed audit report generator."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "aipd506" }
+]
+keywords = ["compliance", "soc2", "cis-benchmarks", "security-audit", "gap-assessment", "hmac-sha256"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: System Administrators",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Security",
+]
+dependencies = []
+
+[project.scripts]
+soc2audit = "soc2audit.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["soc2audit*"]
